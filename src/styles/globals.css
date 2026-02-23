@@ -32,6 +32,14 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-sans--font-feature-settings: "liga" off, "clig" off;
+  /* It seems that Figma uses the default opsz value of 14 instead of auto. */
+  /* Axis definitions: https://fonts.google.com/variablefonts?vfquery=inter */
+  --font-sans--font-variation-settings: "opsz" 14;
+
+  /* Colors */
   --color-*: initial;
 
   --color-white: #ffffff;
