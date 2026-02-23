@@ -32,4 +32,18 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  --color-*: initial;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-red-500: #f15d51;
+
+  --color-gold-400: #e9aa52;
+
+  --color-navy-600: #5e607a;
+  --color-navy-950: #00001a;
+
+  --color-grey-200: #d8d8d8;
+  --color-grey-300: #c5c6ce;
 }
