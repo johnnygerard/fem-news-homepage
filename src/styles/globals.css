@@ -13,7 +13,7 @@
   textarea {
     @apply outline-2 outline-offset-0 outline-transparent;
     /* Note that `outline-style` needs the `:focus-visible` pseudo-class to override the `auto` default in Firefox */
-    @apply focus-visible:outline-blue-400 focus-visible:outline-solid;
+    @apply focus-visible:outline-gold-400 focus-visible:outline-solid;
   }
 }
 
