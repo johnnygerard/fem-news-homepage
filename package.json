@@ -42,7 +42,7 @@
     "node": "24",
     "npm": "11"
   },
-  "name": "starter-astro-5",
+  "name": "fem-news-homepage",
   "private": true,
   "scripts": {
     "astro": "astro",
