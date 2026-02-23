@@ -49,6 +49,12 @@
       ],
       "script": "preview",
       "type": "npm"
+    },
+    {
+      "label": "npm: lint",
+      "problemMatcher": [],
+      "script": "lint",
+      "type": "npm"
     }
   ],
   "version": "2.0.0"
