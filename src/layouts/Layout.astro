@@ -1,0 +1,54 @@
+---
+import "~/styles/globals.css";
+
+type Props = {
+  title: string;
+};
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    {/* Google Fonts */}
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    {/* Favicons */}
+    <link
+      rel="icon"
+      href="/assets/images/favicon-light.png"
+      media="(prefers-color-scheme: light)"
+      type="image/png"
+      sizes="32x32"
+    />
+    <link
+      rel="icon"
+      href="/assets/images/favicon-dark.png"
+      media="(prefers-color-scheme: dark)"
+      type="image/png"
+      sizes="32x32"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+  </head>
+  <body
+    class:list={[
+      "bg-neutral-950 font-[Geist,sans-serif] text-base text-neutral-100",
+      "selection:bg-neutral-200 selection:text-neutral-900",
+    ]}
+  >
+    {/* This wrapper prevents a body overflow in mobile browsers. */}
+    <div class="flex min-h-screen flex-col">
+      <main class="grid flex-1 items-center">
+        <slot />
+      </main>
+    </div>
+  </body>
+</html>
