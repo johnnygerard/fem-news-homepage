@@ -22,7 +22,3 @@ Ignore code formatting, as Prettier is configured to run on save.
 ## Code Linting
 
 Run the lint task before submitting code changes (`npm run lint`).
-
-## Visual Regression Testing
-
-Run Playwright tests before submitting code changes (`npm run e2e`).
