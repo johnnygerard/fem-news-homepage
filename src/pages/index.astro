@@ -36,16 +36,19 @@ const articles = [
     title: "Reviving Retro PCs",
     description: "What happens when old PCs are given modern upgrades?",
     image: "article-1.png",
+    href: "/articles/reviving-retro-pcs",
   },
   {
     title: "Top 10 Laptops of 2022",
     description: "Our best picks for various needs and budgets.",
     image: "article-2.png",
+    href: "/articles/top-10-laptops-of-2022",
   },
   {
     title: "The Growth of Gaming",
     description: "How the pandemic has sparked fresh opportunities.",
     image: "article-3.png",
+    href: "/articles/the-growth-of-gaming",
   },
 ];
 ---
@@ -113,7 +116,7 @@ const articles = [
 
     <section class="mt-16 space-y-8">
       {
-        articles.map(({ image, title, description }, index) => (
+        articles.map(({ image, title, description, href }, index) => (
           <article class="flex items-start gap-6">
             <Image
               src={image}
@@ -126,7 +129,11 @@ const articles = [
               <p class={tw(textPreset3, "text-red-500")}>
                 {String(index + 1).padStart(2, "0")}
               </p>
-              <h3 class={tw(textPreset5, "text-navy-950")}>{title}</h3>
+              <h3 class={tw(textPreset5, "text-navy-950")}>
+                <a href={href} class="transition-colors hover:text-red-500">
+                  {title}
+                </a>
+              </h3>
               <p class={tw(textPreset6, "text-navy-600")}>{description}</p>
             </div>
           </article>
