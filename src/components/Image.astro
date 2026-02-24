@@ -1,0 +1,59 @@
+---
+/**
+ * Image component that uses ImageKit JavaScript SDK for responsive images.
+ * @see https://imagekit.io/docs/integration/javascript#responsive-image-logic
+ */
+import {
+  getResponsiveImageAttributes,
+  type GetImageAttributesOptions,
+} from "@imagekit/javascript";
+import type { HTMLAttributes } from "astro/types";
+import { inferRemoteSize } from "astro:assets";
+
+type Props = Omit<HTMLAttributes<"img">, "srcset" | "height"> & {
+  src: string;
+  alt: string;
+  sizes?: string; // w descriptor
+  width?: number; // x descriptor
+  isAboveTheFold?: boolean;
+  isLCP?: boolean;
+};
+
+const {
+  src,
+  sizes,
+  width,
+  isAboveTheFold = false,
+  isLCP = false,
+  decoding,
+  fetchpriority,
+  loading,
+  ...attrs
+} = Astro.props;
+
+const urlEndpoint = "https://ik.imagekit.io/jgerard/fem-news-homepage/";
+const options: GetImageAttributesOptions = { urlEndpoint, src };
+
+if (typeof sizes === "string" && typeof width === "number")
+  throw new Error(
+    "Incompatible props: 'sizes' and 'width' cannot be used together.",
+  );
+
+if (typeof sizes === "string") options.sizes = sizes;
+if (typeof width === "number") options.width = width;
+
+const responsiveAttributes = getResponsiveImageAttributes(options);
+const resolution = await inferRemoteSize(urlEndpoint + src);
+---
+
+<img
+  src={responsiveAttributes.src}
+  srcset={responsiveAttributes.srcSet}
+  sizes={responsiveAttributes.sizes}
+  decoding={decoding ?? "async"}
+  fetchpriority={fetchpriority ?? (isLCP ? "high" : "auto")}
+  loading={loading ?? (isLCP || isAboveTheFold ? "eager" : "lazy")}
+  width={resolution.width}
+  height={resolution.height}
+  {...attrs}
+/>
