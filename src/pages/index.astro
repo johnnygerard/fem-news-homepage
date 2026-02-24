@@ -1,13 +1,13 @@
 ---
 import Image from "~/components/Image.astro";
 import Layout from "~/layouts/Layout.astro";
+import { buttonStyles } from "~/styles/components";
 import {
   textPreset2,
   textPreset3,
   textPreset4,
   textPreset5,
   textPreset6,
-  textPreset7,
 } from "~/styles/typography";
 import { tw } from "~/utils/tw";
 
@@ -77,15 +77,7 @@ const articles = [
             really fulfilling its promise?
           </p>
 
-          <a
-            href="/articles/the-bright-future-of-web-3-0"
-            class={tw(
-              textPreset7,
-              "flex h-12 w-46.25 items-center justify-center",
-              "bg-red-500 text-navy-950 uppercase transition-colors",
-              "hover:bg-navy-950 hover:text-white",
-            )}
-          >
+          <a href="/articles/the-bright-future-of-web-3-0" class={buttonStyles}>
             Read more
           </a>
         </div>
