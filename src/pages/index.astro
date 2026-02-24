@@ -58,7 +58,9 @@ const articles = [
       />
 
       <div class="space-y-6">
-        <h1 class={tw(textPreset2, "text-navy-950")}>
+        {/* The h1 max width addresses a mismatch between the Figma design */}
+        {/* and the browser that causes the text to wrap differently. */}
+        <h1 class={tw(textPreset2, "text-navy-950 max-[24rem]:max-w-80")}>
           The Bright Future of Web 3.0?
         </h1>
 
