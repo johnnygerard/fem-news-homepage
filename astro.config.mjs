@@ -23,6 +23,15 @@ export default defineConfig({
       },
     ],
   },
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+        pathname: "/jgerard/fem-news-homepage/**",
+      },
+    ],
+  },
   integrations: [sitemap()],
   site: "https://fem-news-homepage.mail-25a.workers.dev",
   trailingSlash: "never",
