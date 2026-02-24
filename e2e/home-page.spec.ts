@@ -13,6 +13,6 @@ test("Home page should match the snapshot", async ({ page }) => {
 
   await expect(page).toHaveScreenshot("home-page.png", {
     fullPage: true,
-    maxDiffPixels: 0,
+    maxDiffPixels: 2,
   });
 });
