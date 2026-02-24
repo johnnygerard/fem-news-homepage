@@ -1,5 +1,126 @@
 ---
+import Image from "~/components/Image.astro";
 import Layout from "~/layouts/Layout.astro";
+import {
+  textPreset2,
+  textPreset3,
+  textPreset4,
+  textPreset5,
+  textPreset6,
+  textPreset7,
+} from "~/styles/typography";
+import { tw } from "~/utils/tw";
+
+const featuredArticles = [
+  {
+    title: "Hydrogen VS Electric Cars",
+    description: "Will hydrogen-fueled cars ever catch up to EVs?",
+  },
+  {
+    title: "The Downsides of AI Artistry",
+    description:
+      "What are the possible adverse effects of on-demand AI image generation?",
+  },
+  {
+    title: "Is VC Funding Drying Up?",
+    description:
+      "Private funding by VC firms is down 50% YOY. We take a look at what that means.",
+  },
+];
+
+const articles = [
+  {
+    title: "Reviving Retro PCs",
+    description: "What happens when old PCs are given modern upgrades?",
+    image: "article-1.png",
+  },
+  {
+    title: "Top 10 Laptops of 2022",
+    description: "Our best picks for various needs and budgets.",
+    image: "article-2.png",
+  },
+  {
+    title: "The Growth of Gaming",
+    description: "How the pandemic has sparked fresh opportunities.",
+    image: "article-3.png",
+  },
+];
 ---
 
-<Layout title="Astro 5 Starter" />
+<Layout title="News homepage">
+  <div class="px-4 pt-8 pb-20">
+    <section class="space-y-6">
+      <Image
+        src="main-article.png"
+        alt="Colorful geometric toy blocks"
+        isLCP
+        class="h-75 w-full object-cover"
+      />
+
+      <div class="space-y-6">
+        <h1 class={tw(textPreset2, "text-navy-950")}>
+          The Bright Future of Web 3.0?
+        </h1>
+
+        <div class="space-y-6">
+          <p class={tw(textPreset6, "text-navy-600")}>
+            We dive into the next evolution of the web that claims to put the
+            power of the platforms back into the hands of the people. But is it
+            really fulfilling its promise?
+          </p>
+
+          <button
+            type="button"
+            class="flex h-12 w-46.25 items-center justify-center bg-red-500"
+          >
+            <span class={tw(textPreset7, "text-navy-950")}>READ MORE</span>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16 bg-navy-950 px-6 py-4">
+      <div class="space-y-8">
+        <h2 class={tw(textPreset3, "text-gold-400")}>New</h2>
+
+        <div class="space-y-8">
+          {
+            featuredArticles.map(({ title, description }, index) => (
+              <div class="space-y-2">
+                <h3 class={tw(textPreset4, "text-white")}>{title}</h3>
+                <p class={tw(textPreset6, "text-grey-300")}>{description}</p>
+
+                {index < featuredArticles.length - 1 && (
+                  <hr class="mt-8 border-t border-navy-600" />
+                )}
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </section>
+
+    <section class="mt-16 space-y-8">
+      {
+        articles.map(({ image, title, description }, index) => (
+          <article class="flex items-start gap-6">
+            <Image
+              src={image}
+              alt=""
+              aria-hidden="true"
+              class="h-32 w-25 object-cover"
+            />
+
+            <div class="space-y-2">
+              <p class={tw(textPreset3, "text-red-500")}>
+                {String(index + 1).padStart(2, "0")}
+              </p>
+              <h3 class={tw(textPreset5, "text-navy-950")}>{title}</h3>
+              <p class={tw(textPreset6, "text-navy-600")}>{description}</p>
+            </div>
+          </article>
+        ))
+      }
+    </section>
+  </div>
+</Layout>
