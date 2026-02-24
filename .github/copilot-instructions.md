@@ -18,7 +18,3 @@ The goal of this project is to implement a responsive news homepage based on a F
 ## Code Formatting
 
 Ignore code formatting, as Prettier is configured to run on save.
-
-## Code Linting
-
-Run the lint task before submitting code changes (`npm run lint`).
