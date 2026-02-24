@@ -77,14 +77,17 @@ const articles = [
             really fulfilling its promise?
           </p>
 
-          <button
-            type="button"
-            class="flex h-12 w-46.25 items-center justify-center bg-red-500"
+          <a
+            href="/articles/the-bright-future-of-web-3-0"
+            class={tw(
+              textPreset7,
+              "flex h-12 w-46.25 items-center justify-center",
+              "bg-red-500 text-navy-950 uppercase transition-colors",
+              "hover:bg-navy-950 hover:text-white",
+            )}
           >
-            <span class={tw(textPreset7, "text-navy-950 uppercase")}>
-              Read more
-            </span>
-          </button>
+            Read more
+          </a>
         </div>
       </div>
     </section>
