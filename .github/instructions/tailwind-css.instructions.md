@@ -11,7 +11,7 @@ Tailwind CSS major version: 4
 ## General Guidelines
 
 - Keep utility classes organized and readable by splitting long class strings into multiple lines with the `tw` utility function.
-- Keep hardcoded text in sentence case and use appropriate utility classes. For example, use `<button class="uppercase">Read more</button>` instead of `<button>READ MORE</button>`
+- Use the `uppercase` utility class rather than hardcoding text in all caps.
 
 ## Spacing Scale
 
