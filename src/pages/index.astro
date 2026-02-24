@@ -95,7 +95,9 @@ const articles = [
             featuredArticles.map(({ title, description, href }, index) => (
               <div class="space-y-2">
                 <h3 class={tw(textPreset4, "text-white")}>
-                  <a href={href}>{title}</a>
+                  <a href={href} class="transition-colors hover:text-gold-400">
+                    {title}
+                  </a>
                 </h3>
                 <p class={tw(textPreset6, "text-grey-300")}>{description}</p>
 
