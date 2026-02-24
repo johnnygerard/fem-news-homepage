@@ -18,3 +18,7 @@ Use Tailwind CSS's spacing scale (`--spacing: 0.25rem;`). Examples:
 Avoid fractional pixels:
 
 - Use `gap-4` instead of `gap-[0.99875rem]` or `gap-[15.98px]`
+
+## Text Capitalization
+
+Keep hardcoded text in sentence case and use appropriate utility classes. For example, use `<button class="uppercase">Read more</button>` instead of `<button>READ MORE</button>`
