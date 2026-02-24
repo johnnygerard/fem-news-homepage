@@ -15,16 +15,19 @@ const featuredArticles = [
   {
     title: "Hydrogen VS Electric Cars",
     description: "Will hydrogen-fueled cars ever catch up to EVs?",
+    href: "/featured-articles/hydrogen-vs-electric-cars",
   },
   {
     title: "The Downsides of AI Artistry",
     description:
       "What are the possible adverse effects of on-demand AI image generation?",
+    href: "/featured-articles/the-downsides-of-ai-artistry",
   },
   {
     title: "Is VC Funding Drying Up?",
     description:
       "Private funding by VC firms is down 50% YOY. We take a look at what that means.",
+    href: "/featured-articles/is-vc-funding-drying-up",
   },
 ];
 
@@ -89,9 +92,11 @@ const articles = [
 
         <div class="space-y-8">
           {
-            featuredArticles.map(({ title, description }, index) => (
+            featuredArticles.map(({ title, description, href }, index) => (
               <div class="space-y-2">
-                <h3 class={tw(textPreset4, "text-white")}>{title}</h3>
+                <h3 class={tw(textPreset4, "text-white")}>
+                  <a href={href}>{title}</a>
+                </h3>
                 <p class={tw(textPreset6, "text-grey-300")}>{description}</p>
 
                 {index < featuredArticles.length - 1 && (
