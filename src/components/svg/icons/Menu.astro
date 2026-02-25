@@ -1,0 +1,13 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+type Props = HTMLAttributes<"svg">;
+
+const { class: className, ...attrs } = Astro.props;
+---
+
+<svg viewBox="0 0 40 17" class:list={["fill-navy-950", className]} {...attrs}>
+  <rect width="40" height="3"></rect>
+  <rect y="7" width="40" height="3"></rect>
+  <rect y="14" width="40" height="3"></rect>
+</svg>

@@ -1,7 +1,7 @@
 import cloudflare from "@astrojs/cloudflare";
 import sitemap from "@astrojs/sitemap";
 import tailwindcss from "@tailwindcss/vite";
-import { defineConfig } from "astro/config";
+import { defineConfig, fontProviders } from "astro/config";
 
 // https://docs.astro.build/en/reference/configuration-reference/
 export default defineConfig({
@@ -9,8 +9,31 @@ export default defineConfig({
   build: {
     format: "file",
   },
+  experimental: {
+    fonts: [
+      // Inter: sans-serif typeface
+      // @see https://fonts.google.com/specimen/Inter/about
+      {
+        cssVariable: "--font-inter",
+        name: "Inter",
+        provider: fontProviders.google(),
+        styles: ["normal"],
+        subsets: ["latin"],
+        weights: ["400 800"],
+      },
+    ],
+  },
+  image: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "ik.imagekit.io",
+        pathname: "/jgerard/fem-news-homepage/**",
+      },
+    ],
+  },
   integrations: [sitemap()],
-  site: "https://starter-astro-5.mail-25a.workers.dev",
+  site: "https://fem-news-homepage.mail-25a.workers.dev",
   trailingSlash: "never",
   vite: {
     plugins: [

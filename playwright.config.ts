@@ -35,39 +35,37 @@ export default defineConfig({
   /* Configure projects for major browsers */
   projects: [
     {
-      name: "chromium",
-      use: { ...devices["Desktop Chrome"] },
+      name: "mobile-webkit",
+      use: {
+        ...devices["iPhone X"],
+      },
     },
 
     {
-      name: "firefox",
-      use: { ...devices["Desktop Firefox"] },
+      name: "mobile-chromium",
+      use: {
+        viewport: { width: 375, height: 812 },
+        userAgent:
+          "Mozilla/5.0 (Linux; Android 10; Mobile) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.7680.0 Mobile Safari/537.36",
+        deviceScaleFactor: 3,
+        isMobile: true,
+        hasTouch: true,
+        defaultBrowserType: "chromium",
+      },
     },
 
     {
-      name: "webkit",
-      use: { ...devices["Desktop Safari"] },
+      name: "mobile-firefox",
+      use: {
+        viewport: { width: 375, height: 812 },
+        userAgent:
+          "Mozilla/5.0 (Android 10; Mobile; rv:146.0) Gecko/146.0 Firefox/146.0",
+        deviceScaleFactor: 3,
+        isMobile: false, // not supported in Firefox
+        hasTouch: true,
+        defaultBrowserType: "firefox",
+      },
     },
-
-    /* Test against mobile viewports. */
-    // {
-    //   name: 'Mobile Chrome',
-    //   use: { ...devices['Pixel 5'] },
-    // },
-    // {
-    //   name: 'Mobile Safari',
-    //   use: { ...devices['iPhone 12'] },
-    // },
-
-    /* Test against branded browsers. */
-    // {
-    //   name: 'Microsoft Edge',
-    //   use: { ...devices['Desktop Edge'], channel: 'msedge' },
-    // },
-    // {
-    //   name: 'Google Chrome',
-    //   use: { ...devices['Desktop Chrome'], channel: 'chrome' },
-    // },
   ],
 
   /* Run your local dev server before starting the tests */

@@ -13,7 +13,7 @@
   textarea {
     @apply outline-2 outline-offset-0 outline-transparent;
     /* Note that `outline-style` needs the `:focus-visible` pseudo-class to override the `auto` default in Firefox */
-    @apply focus-visible:outline-blue-400 focus-visible:outline-solid;
+    @apply focus-visible:outline-gold-400 focus-visible:outline-solid;
   }
 }
 
@@ -32,4 +32,26 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  /* Typography */
+  --font-sans: var(--font-inter);
+  --font-sans--font-feature-settings: "liga" off, "clig" off;
+  /* It seems that Figma uses the default opsz value of 14 instead of auto. */
+  /* Axis definitions: https://fonts.google.com/variablefonts?vfquery=inter */
+  --font-sans--font-variation-settings: "opsz" 14;
+
+  /* Colors */
+  --color-*: initial;
+
+  --color-white: #ffffff;
+  --color-black: #000000;
+
+  --color-red-500: #f15d51;
+
+  --color-gold-400: #e9aa52;
+
+  --color-navy-600: #5e607a;
+  --color-navy-950: #00001a;
+
+  --color-grey-200: #d8d8d8;
+  --color-grey-300: #c5c6ce;
 }
