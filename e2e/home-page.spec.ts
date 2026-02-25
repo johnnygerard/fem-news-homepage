@@ -6,10 +6,17 @@ test("Home page should match the snapshot", async ({ page }) => {
   // Ensure lazy-loaded content is loaded by scrolling to the bottom of the page.
   await page.evaluate(() => {
     window.scrollTo({
-      top: document.body.scrollHeight,
+      top: document.documentElement.scrollHeight,
       behavior: "smooth",
     });
   });
+
+  // Wait until the bottom of the page is reached and all network requests are idle.
+  await page.waitForFunction(() => {
+    const html = document.documentElement;
+    return window.scrollY === html.scrollHeight - html.clientHeight;
+  });
+  await page.waitForLoadState("networkidle");
 
   await expect(page).toHaveScreenshot("home-page.png", {
     fullPage: true,
