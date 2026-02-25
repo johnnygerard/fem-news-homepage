@@ -36,14 +36,14 @@ const {
 const urlEndpoint = "https://ik.imagekit.io/jgerard/fem-news-homepage/";
 const options: GetImageAttributesOptions = { urlEndpoint, src };
 
-if (typeof sizes === "string" && typeof width === "number")
+if (sizes !== undefined && width !== undefined)
   throw new Error(
     "Incompatible props: 'sizes' and 'width' cannot be used together.",
   );
 
-if (typeof sizes === "string") options.sizes = sizes;
-if (typeof width === "number") options.width = width;
-if (Array.isArray(transformation)) options.transformation = transformation;
+if (sizes !== undefined) options.sizes = sizes;
+if (width !== undefined) options.width = width;
+if (transformation !== undefined) options.transformation = transformation;
 
 const responsiveAttributes = getResponsiveImageAttributes(options);
 const resolution = await inferRemoteSize(responsiveAttributes.src);
