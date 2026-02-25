@@ -113,13 +113,7 @@ const articles = [
       {
         articles.map(({ image, title, description, href }, index) => (
           <article class="flex items-start gap-6">
-            <Image
-              src={image}
-              alt=""
-              aria-hidden="true"
-              class="h-32 w-25 object-cover"
-            />
-
+            <Image src={image} alt="" class="h-32 w-25 object-cover" />
             <div class="space-y-2">
               <p class={tw(textPreset3, "text-red-500")}>
                 {String(index + 1).padStart(2, "0")}
