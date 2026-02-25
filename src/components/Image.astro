@@ -43,7 +43,7 @@ if (typeof sizes === "string") options.sizes = sizes;
 if (typeof width === "number") options.width = width;
 
 const responsiveAttributes = getResponsiveImageAttributes(options);
-const resolution = await inferRemoteSize(urlEndpoint + src);
+const resolution = await inferRemoteSize(responsiveAttributes.src);
 ---
 
 <img
