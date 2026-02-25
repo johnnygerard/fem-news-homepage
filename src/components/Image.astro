@@ -15,6 +15,7 @@ type Props = Omit<HTMLAttributes<"img">, "srcset" | "height"> & {
   alt: string;
   sizes?: string; // w descriptor
   width?: number; // x descriptor
+  transformation?: GetImageAttributesOptions["transformation"];
   isAboveTheFold?: boolean;
   isLCP?: boolean;
 };
@@ -23,6 +24,7 @@ const {
   src,
   sizes,
   width,
+  transformation,
   isAboveTheFold = false,
   isLCP = false,
   decoding,
@@ -41,6 +43,7 @@ if (typeof sizes === "string" && typeof width === "number")
 
 if (typeof sizes === "string") options.sizes = sizes;
 if (typeof width === "number") options.width = width;
+if (Array.isArray(transformation)) options.transformation = transformation;
 
 const responsiveAttributes = getResponsiveImageAttributes(options);
 const resolution = await inferRemoteSize(responsiveAttributes.src);
