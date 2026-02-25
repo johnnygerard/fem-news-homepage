@@ -1,4 +1,7 @@
 ---
+import { getResponsiveImageAttributes } from "@imagekit/javascript";
+import { inferRemoteSize } from "astro:assets";
+import { IMAGEKIT_URL_ENDPOINT } from "astro:env/client";
 import Image from "~/components/Image.astro";
 import Layout from "~/layouts/Layout.astro";
 import { buttonStyles } from "~/styles/components";
@@ -36,32 +39,51 @@ const articles = [
     title: "Reviving Retro PCs",
     description: "What happens when old PCs are given modern upgrades?",
     image: "article-1.png",
+    alt: "A collection of retro computing and gaming hardware, including a vintage monitor, keyboard, joystick, and cassette tapes, illuminated by neon blue and pink lighting.",
     href: "/articles/reviving-retro-pcs",
   },
   {
     title: "Top 10 Laptops of 2022",
     description: "Our best picks for various needs and budgets.",
     image: "article-2.png",
+    alt: "Close-up macro view of a black mechanical computer keyboard with red backlit keys.",
     href: "/articles/top-10-laptops-of-2022",
   },
   {
     title: "The Growth of Gaming",
     description: "How the pandemic has sparked fresh opportunities.",
     image: "article-3.png",
+    alt: "A white video game controller floating in the air above an open hand against a gray background.",
     href: "/articles/the-growth-of-gaming",
   },
 ];
+
+const heroTabletImage = getResponsiveImageAttributes({
+  src: "main-article-tablet.png",
+  urlEndpoint: IMAGEKIT_URL_ENDPOINT,
+});
+const heroTabletImageResolution = await inferRemoteSize(heroTabletImage.src);
 ---
 
 <Layout title="News homepage">
-  <div class="px-4 pt-8 pb-20">
+  <div class="px-4 pt-8 pb-20 md:px-20">
     <section class="space-y-6">
-      <Image
-        src="main-article.png"
-        alt="Colorful geometric toy blocks"
-        isLCP
-        class="h-75 w-full object-cover"
-      />
+      <picture class="block">
+        <source
+          media="(min-width: 48rem)"
+          srcset={heroTabletImage.srcSet}
+          sizes={heroTabletImage.sizes}
+          width={heroTabletImageResolution.width}
+          height={heroTabletImageResolution.height}
+        />
+
+        <Image
+          src="main-article-mobile.png"
+          alt="Lego 3D Render"
+          isLCP
+          class="h-75 w-full object-cover"
+        />
+      </picture>
 
       <div class="space-y-6">
         {/* The h1 max width addresses a mismatch between the Figma design */}
@@ -84,9 +106,11 @@ const articles = [
       </div>
     </section>
 
-    <section class="mt-16 bg-navy-950 px-6 py-4">
+    <section class="mt-16 bg-navy-950 px-6 py-4 md:px-10 md:py-8">
       <div class="space-y-8">
-        <h2 class={tw(textPreset3, "text-gold-400")}>New</h2>
+        <h2 class={tw(textPreset3, "text-gold-400 md:text-[2.5rem]/none")}>
+          New
+        </h2>
 
         <div class="space-y-8">
           {
@@ -111,15 +135,9 @@ const articles = [
 
     <section class="mt-16 space-y-8">
       {
-        articles.map(({ image, title, description, href }, index) => (
-          <article class="flex items-start gap-6">
-            <Image
-              src={image}
-              alt=""
-              aria-hidden="true"
-              class="h-32 w-25 object-cover"
-            />
-
+        articles.map(({ image, alt, title, description, href }, index) => (
+          <article class="flex items-start gap-6 md:items-center">
+            <Image src={image} alt={alt} class="h-32 w-25 object-cover" />
             <div class="space-y-2">
               <p class={tw(textPreset3, "text-red-500")}>
                 {String(index + 1).padStart(2, "0")}
