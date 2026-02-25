@@ -33,7 +33,9 @@ export default defineConfig({
   },
 
   /* Configure projects for major browsers */
+  /* Device list: https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json */
   projects: [
+    /* Mobile configurations targeting 375px width */
     {
       name: "mobile-webkit",
       use: {
@@ -61,6 +63,40 @@ export default defineConfig({
         userAgent:
           "Mozilla/5.0 (Android 10; Mobile; rv:146.0) Gecko/146.0 Firefox/146.0",
         deviceScaleFactor: 3,
+        isMobile: false, // not supported in Firefox
+        hasTouch: true,
+        defaultBrowserType: "firefox",
+      },
+    },
+
+    /* Tablet configurations targeting 768px width */
+    {
+      name: "tablet-webkit",
+      use: {
+        ...devices["iPad (gen 6)"],
+      },
+    },
+
+    {
+      name: "tablet-chromium",
+      use: {
+        viewport: { width: 768, height: 1024 },
+        userAgent:
+          "Mozilla/5.0 (Linux; Android 10; Tablet) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/146.0.7680.0 Safari/537.36",
+        deviceScaleFactor: 2,
+        isMobile: true,
+        hasTouch: true,
+        defaultBrowserType: "chromium",
+      },
+    },
+
+    {
+      name: "tablet-firefox",
+      use: {
+        viewport: { width: 768, height: 1024 },
+        userAgent:
+          "Mozilla/5.0 (Android 10; Tablet; rv:146.0) Gecko/146.0 Firefox/146.0",
+        deviceScaleFactor: 2,
         isMobile: false, // not supported in Firefox
         hasTouch: true,
         defaultBrowserType: "firefox",
