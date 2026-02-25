@@ -36,18 +36,21 @@ const articles = [
     title: "Reviving Retro PCs",
     description: "What happens when old PCs are given modern upgrades?",
     image: "article-1.png",
+    alt: "A collection of retro computing and gaming hardware, including a vintage monitor, keyboard, joystick, and cassette tapes, illuminated by neon blue and pink lighting.",
     href: "/articles/reviving-retro-pcs",
   },
   {
     title: "Top 10 Laptops of 2022",
     description: "Our best picks for various needs and budgets.",
     image: "article-2.png",
+    alt: "Close-up macro view of a black mechanical computer keyboard with red backlit keys.",
     href: "/articles/top-10-laptops-of-2022",
   },
   {
     title: "The Growth of Gaming",
     description: "How the pandemic has sparked fresh opportunities.",
     image: "article-3.png",
+    alt: "A white video game controller floating in the air above an open hand against a gray background.",
     href: "/articles/the-growth-of-gaming",
   },
 ];
@@ -111,9 +114,9 @@ const articles = [
 
     <section class="mt-16 space-y-8">
       {
-        articles.map(({ image, title, description, href }, index) => (
+        articles.map(({ image, alt, title, description, href }, index) => (
           <article class="flex items-start gap-6">
-            <Image src={image} alt="" class="h-32 w-25 object-cover" />
+            <Image src={image} alt={alt} class="h-32 w-25 object-cover" />
             <div class="space-y-2">
               <p class={tw(textPreset3, "text-red-500")}>
                 {String(index + 1).padStart(2, "0")}
