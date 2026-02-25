@@ -28,3 +28,10 @@ Examples:
 - Lint codebase: `npm run lint`
 - Lint one file: `npm run lint -- README.md`
 - Lint directory: `npm run lint -- src/`
+
+## npm Scripts
+
+Unless otherwise specified, do not execute the following npm scripts:
+
+- `npm run build`
+- `npm run dev`
