@@ -35,9 +35,15 @@ export default defineConfig({
   /* Configure projects for major browsers */
   /* Device list: https://github.com/microsoft/playwright/blob/main/packages/playwright-core/src/server/deviceDescriptorsSource.json */
   projects: [
+    {
+      name: "setup",
+      testMatch: "setup.ts",
+    },
+
     /* Mobile configurations targeting 375px width */
     {
       name: "mobile-webkit",
+      dependencies: ["setup"],
       use: {
         ...devices["iPhone X"],
       },
@@ -45,6 +51,7 @@ export default defineConfig({
 
     {
       name: "mobile-chromium",
+      dependencies: ["setup"],
       use: {
         viewport: { width: 375, height: 812 },
         userAgent:
@@ -58,6 +65,7 @@ export default defineConfig({
 
     {
       name: "mobile-firefox",
+      dependencies: ["setup"],
       use: {
         viewport: { width: 375, height: 812 },
         userAgent:
@@ -72,6 +80,7 @@ export default defineConfig({
     /* Tablet configurations targeting 768px width */
     {
       name: "tablet-webkit",
+      dependencies: ["setup"],
       use: {
         ...devices["iPad (gen 6)"],
       },
@@ -79,6 +88,7 @@ export default defineConfig({
 
     {
       name: "tablet-chromium",
+      dependencies: ["setup"],
       use: {
         viewport: { width: 768, height: 1024 },
         userAgent:
@@ -92,6 +102,7 @@ export default defineConfig({
 
     {
       name: "tablet-firefox",
+      dependencies: ["setup"],
       use: {
         viewport: { width: 768, height: 1024 },
         userAgent:
@@ -106,6 +117,7 @@ export default defineConfig({
     /* Desktop configurations targeting 1440px width */
     {
       name: "desktop-chromium",
+      dependencies: ["setup"],
       use: {
         ...devices["Desktop Chrome"],
         viewport: { width: 1440, height: 900 },
@@ -114,6 +126,7 @@ export default defineConfig({
 
     {
       name: "desktop-firefox",
+      dependencies: ["setup"],
       use: {
         ...devices["Desktop Firefox"],
         viewport: { width: 1440, height: 900 },
@@ -122,6 +135,7 @@ export default defineConfig({
 
     {
       name: "desktop-webkit",
+      dependencies: ["setup"],
       use: {
         ...devices["Desktop Safari"],
         viewport: { width: 1440, height: 900 },
