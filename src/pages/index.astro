@@ -66,6 +66,7 @@ const heroTabletImageResolution = await inferRemoteSize(heroTabletImage.src);
 const heroDesktopImage = getResponsiveImageAttributes({
   src: "main-article-desktop.png",
   urlEndpoint: IMAGEKIT_URL_ENDPOINT,
+  width: 730,
 });
 const heroDesktopImageResolution = await inferRemoteSize(heroDesktopImage.src);
 ---
@@ -195,7 +196,12 @@ const heroDesktopImageResolution = await inferRemoteSize(heroDesktopImage.src);
         {
           articles.map(({ image, alt, title, description, href }, index) => (
             <article class="flex items-start gap-6 md:items-center 2xl:w-85.25">
-              <Image src={image} alt={alt} class="h-32 w-25 object-cover" />
+              <Image
+                src={image}
+                alt={alt}
+                class="h-32 w-25 object-cover"
+                width={100}
+              />
               <div class="space-y-2">
                 <p class={tw(textPreset3, "text-red-500")}>
                   {String(index + 1).padStart(2, "0")}
