@@ -1,12 +1,12 @@
-# Astro 5 Starter
+# Frontend Mentor | News Homepage
 
-This starter repository facilitates the creation of new Astro projects using the configuration described below.
-
-To learn how to use a GitHub template repository, check
-out [Creating a repository from a template](https://docs.github.com/en/repositories/creating-and-managing-repositories/creating-a-repository-from-a-template).
+This is my solution to
+the [News homepage challenge](https://www.frontendmentor.io/challenges/news-homepage-H6SWTa1MFl)
+from [Frontend Mentor](https://www.frontendmentor.io/).
 
 ![project status](https://img.shields.io/badge/project_status-active-success?style=for-the-badge)
 [![live site](https://img.shields.io/badge/live_site-blue?style=for-the-badge)](https://fem-news-homepage.mail-25a.workers.dev/)
+[![Lighthouse report](https://img.shields.io/badge/lighthouse-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff)](https://googlechrome.github.io/lighthouse/viewer/?gist=f10fdb3c7cfbfa08ab193fb22eb6dbe5)
 
 ## Tech Stack
 
