@@ -185,6 +185,7 @@ const heroDesktopImageResolution = await inferRemoteSize(heroDesktopImage.src);
       <section
         class="space-y-8 2xl:flex 2xl:items-start 2xl:gap-10 2xl:space-y-0"
       >
+        <h2 class="sr-only">Top articles</h2>
         {
           articles.map(({ image, alt, title, description, href }, index) => (
             <article class="flex items-start gap-6 md:items-center 2xl:w-85.25">
