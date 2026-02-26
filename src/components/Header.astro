@@ -6,18 +6,49 @@ import { navigation } from "~/data/navigation";
 import { tw } from "~/utils/tw";
 ---
 
-<header class="px-4 pt-7 md:px-20">
-  <div class="flex items-center justify-between">
-    <a href="/" aria-label="Go to homepage">
-      <Logo class="h-7 w-11.25" aria-hidden="true" focusable="false" />
+<header class="px-4 pt-7 md:px-20 2xl:px-0 2xl:pt-22.25">
+  <div class="mx-auto flex items-center justify-between 2xl:w-278">
+    <a href="/">
+      <span class="sr-only">Go to homepage</span>
+      <Logo
+        class="h-7 w-11.25 2xl:h-10 2xl:w-16"
+        aria-hidden="true"
+        focusable="false"
+      />
     </a>
 
+    <nav aria-label="Main" class="hidden 2xl:block">
+      <ul
+        class={tw(
+          "flex items-center gap-10",
+          "text-[0.9375rem]/[1.625rem] text-navy-600",
+        )}
+      >
+        {
+          navigation.map(({ label, href }) => (
+            <li>
+              <a
+                href={href}
+                class={tw(
+                  "transition-colors hover:text-red-500",
+                  href === "/" && "text-navy-950",
+                )}
+              >
+                {label}
+              </a>
+            </li>
+          ))
+        }
+      </ul>
+    </nav>
+
     <button
-      aria-label="Open menu"
+      class="2xl:hidden"
       command="show-modal"
       commandfor="mobile-menu"
       type="button"
     >
+      <span class="sr-only">Open menu</span>
       <Menu class="h-4.25 w-10" aria-hidden="true" focusable="false" />
     </button>
   </div>
@@ -25,6 +56,7 @@ import { tw } from "~/utils/tw";
   <dialog
     id="mobile-menu"
     class={tw(
+      "2xl:hidden",
       "m-0 ml-auto h-screen max-h-none w-full max-w-none overflow-hidden",
       "bg-transparent p-0 text-navy-950 backdrop:bg-navy-950/50",
     )}
@@ -38,12 +70,12 @@ import { tw } from "~/utils/tw";
       )}
     >
       <button
-        aria-label="Close menu"
         class="ml-auto"
         command="close"
         commandfor="mobile-menu"
         type="button"
       >
+        <span class="sr-only">Close menu</span>
         <Close aria-hidden="true" class="size-7" focusable="false" />
       </button>
 

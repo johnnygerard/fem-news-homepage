@@ -32,6 +32,9 @@
 /* `@theme inline` is required when referencing CSS custom properties */
 /* @see https://tailwindcss.com/docs/theme#referencing-other-variables */
 @theme inline {
+  /* Desktop breakpoint (1440px) */
+  --breakpoint-2xl: 90rem;
+
   /* Typography */
   --font-sans: var(--font-inter);
   --font-sans--font-feature-settings: "liga" off, "clig" off;
