@@ -70,7 +70,10 @@ const heroDesktopImage = getResponsiveImageAttributes({
 const heroDesktopImageResolution = await inferRemoteSize(heroDesktopImage.src);
 ---
 
-<Layout title="News homepage">
+<Layout
+  title="News homepage"
+  description="Read the latest headlines on technology, AI, startups, and gaming, with featured analysis and top stories."
+>
   <div
     class={tw(
       "px-4 pt-8 pb-20 md:px-20",
