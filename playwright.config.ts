@@ -102,6 +102,31 @@ export default defineConfig({
         defaultBrowserType: "firefox",
       },
     },
+
+    /* Desktop configurations targeting 1440px width */
+    {
+      name: "desktop-chromium",
+      use: {
+        ...devices["Desktop Chrome"],
+        viewport: { width: 1440, height: 900 },
+      },
+    },
+
+    {
+      name: "desktop-firefox",
+      use: {
+        ...devices["Desktop Firefox"],
+        viewport: { width: 1440, height: 900 },
+      },
+    },
+
+    {
+      name: "desktop-webkit",
+      use: {
+        ...devices["Desktop Safari"],
+        viewport: { width: 1440, height: 900 },
+      },
+    },
   ],
 
   /* Run your local dev server before starting the tests */
