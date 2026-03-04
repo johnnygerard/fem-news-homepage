@@ -1,5 +1,7 @@
 import { expect, test } from "@playwright/test";
 
+const testBaseline = process.env.E2E_VISUAL_MODE === "figma";
+
 test("Home page should match the snapshot", async ({ page }) => {
   await page.goto("/");
 
@@ -18,8 +20,11 @@ test("Home page should match the snapshot", async ({ page }) => {
   });
   await page.waitForLoadState("networkidle");
 
-  await expect(page).toHaveScreenshot("home-page.png", {
-    fullPage: true,
-    maxDiffPixels: 2,
-  });
+  await expect(page).toHaveScreenshot(
+    `home-page${testBaseline ? "-baseline" : ""}.png`,
+    {
+      fullPage: true,
+      maxDiffPixels: testBaseline ? 0 : 2,
+    },
+  );
 });
