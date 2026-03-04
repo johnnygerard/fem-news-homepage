@@ -2,7 +2,7 @@ import { expect, test } from "@playwright/test";
 
 const testBaseline = process.env.E2E_VISUAL_MODE === "figma";
 
-test("Home page should match the snapshot", async ({ page }) => {
+test("Home page should match the screenshot", async ({ page }) => {
   await page.goto("/");
 
   // Ensure lazy-loaded content is loaded by scrolling to the bottom of the page.
