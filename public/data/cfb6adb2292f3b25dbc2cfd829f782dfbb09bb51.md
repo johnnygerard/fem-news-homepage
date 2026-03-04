@@ -1,0 +1,87 @@
+# Page snapshot
+
+```yaml
+- generic [ref=e2]:
+  - banner [ref=e3]:
+    - generic [ref=e4]:
+      - link "Go to homepage" [ref=e5]:
+        - /url: /
+        - generic [ref=e6]: Go to homepage
+        - img [ref=e7]
+      - navigation "Main" [ref=e9]:
+        - list [ref=e10]:
+          - listitem [ref=e11]:
+            - link "Home" [ref=e12]:
+              - /url: /
+          - listitem [ref=e13]:
+            - link "New" [ref=e14]:
+              - /url: /new
+          - listitem [ref=e15]:
+            - link "Popular" [ref=e16]:
+              - /url: /popular
+          - listitem [ref=e17]:
+            - link "Trending" [ref=e18]:
+              - /url: /trending
+          - listitem [ref=e19]:
+            - link "Categories" [ref=e20]:
+              - /url: /categories
+  - main [ref=e21]:
+    - generic [ref=e23]:
+      - generic [ref=e24]:
+        - generic [ref=e25]:
+          - img "Lego 3D Render" [ref=e27]
+          - generic [ref=e28]:
+            - heading "The Bright Future of Web 3.0?" [level=1] [ref=e29]
+            - generic [ref=e30]:
+              - paragraph [ref=e31]: We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. But is it really fulfilling its promise?
+              - link "Read more about The Bright Future of Web 3.0?" [ref=e32]:
+                - /url: /articles/the-bright-future-of-web-3-0
+                - text: Read more
+                - generic [ref=e33]: about The Bright Future of Web 3.0?
+        - generic [ref=e35]:
+          - heading "New" [level=2] [ref=e36]
+          - generic [ref=e37]:
+            - generic [ref=e38]:
+              - heading "Hydrogen VS Electric Cars" [level=3] [ref=e39]:
+                - link "Hydrogen VS Electric Cars" [ref=e40]:
+                  - /url: /featured-articles/hydrogen-vs-electric-cars
+              - paragraph [ref=e41]: Will hydrogen-fueled cars ever catch up to EVs?
+              - separator [ref=e42]
+            - generic [ref=e43]:
+              - heading "The Downsides of AI Artistry" [level=3] [ref=e44]:
+                - link "The Downsides of AI Artistry" [ref=e45]:
+                  - /url: /featured-articles/the-downsides-of-ai-artistry
+              - paragraph [ref=e46]: What are the possible adverse effects of on-demand AI image generation?
+              - separator [ref=e47]
+            - generic [ref=e48]:
+              - heading "Is VC Funding Drying Up?" [level=3] [ref=e49]:
+                - link "Is VC Funding Drying Up?" [ref=e50]:
+                  - /url: /featured-articles/is-vc-funding-drying-up
+              - paragraph [ref=e51]: Private funding by VC firms is down 50% YOY. We take a look at what that means.
+      - generic [ref=e52]:
+        - heading "Top articles" [level=2] [ref=e53]
+        - article [ref=e54]:
+          - img "A collection of retro computing and gaming hardware, including a vintage monitor, keyboard, joystick, and cassette tapes, illuminated by neon blue and pink lighting." [ref=e55]
+          - generic [ref=e56]:
+            - paragraph [ref=e57]: "01"
+            - heading "Reviving Retro PCs" [level=3] [ref=e58]:
+              - link "Reviving Retro PCs" [ref=e59]:
+                - /url: /articles/reviving-retro-pcs
+            - paragraph [ref=e60]: What happens when old PCs are given modern upgrades?
+        - article [ref=e61]:
+          - img "Close-up macro view of a black mechanical computer keyboard with red backlit keys." [ref=e62]
+          - generic [ref=e63]:
+            - paragraph [ref=e64]: "02"
+            - heading "Top 10 Laptops of 2022" [level=3] [ref=e65]:
+              - link "Top 10 Laptops of 2022" [ref=e66]:
+                - /url: /articles/top-10-laptops-of-2022
+            - paragraph [ref=e67]: Our best picks for various needs and budgets.
+        - article [ref=e68]:
+          - img "A white video game controller floating in the air above an open hand against a gray background." [ref=e69]
+          - generic [ref=e70]:
+            - paragraph [ref=e71]: "03"
+            - heading "The Growth of Gaming" [level=3] [ref=e72]:
+              - link "The Growth of Gaming" [ref=e73]:
+                - /url: /articles/the-growth-of-gaming
+            - paragraph [ref=e74]: How the pandemic has sparked fresh opportunities.
+```

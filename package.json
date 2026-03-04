@@ -54,6 +54,7 @@
     "dev": "astro dev",
     "docs": "astro docs",
     "e2e": "playwright test",
+    "e2e:figma": "E2E_VISUAL_MODE=figma playwright test --headed",
     "e2e:headed": "playwright test --headed",
     "format": "prettier --write .",
     "format:check": "prettier --check .",

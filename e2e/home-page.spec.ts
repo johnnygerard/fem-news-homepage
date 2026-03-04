@@ -1,6 +1,8 @@
 import { expect, test } from "@playwright/test";
 
-test("Home page should match the snapshot", async ({ page }) => {
+const testBaseline = process.env.E2E_VISUAL_MODE === "figma";
+
+test("Home page should match the screenshot", async ({ page }) => {
   await page.goto("/");
 
   // Ensure lazy-loaded content is loaded by scrolling to the bottom of the page.
@@ -18,8 +20,11 @@ test("Home page should match the snapshot", async ({ page }) => {
   });
   await page.waitForLoadState("networkidle");
 
-  await expect(page).toHaveScreenshot("home-page.png", {
-    fullPage: true,
-    maxDiffPixels: 2,
-  });
+  await expect(page).toHaveScreenshot(
+    `home-page${testBaseline ? "-baseline" : ""}.png`,
+    {
+      fullPage: true,
+      maxDiffPixels: testBaseline ? 0 : 2,
+    },
+  );
 });
