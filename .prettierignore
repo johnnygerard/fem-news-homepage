@@ -1,2 +1,4 @@
 package-lock.json
+public/
+src/pages/playwright-report/index.html
 worker-configuration.d.ts
