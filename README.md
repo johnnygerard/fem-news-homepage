@@ -6,7 +6,7 @@ from [Frontend Mentor](https://www.frontendmentor.io/).
 
 [![project status](https://img.shields.io/badge/status-solution_published-success?style=for-the-badge)](https://www.frontendmentor.io/solutions/news-homepage-Uamsh3HZtm)
 [![live site](https://img.shields.io/badge/live_site-blue?style=for-the-badge)](https://fem-news-homepage.jgerard.workers.dev/)
-[![Lighthouse report](https://img.shields.io/badge/lighthouse_report-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff)](https://googlechrome.github.io/lighthouse/viewer/?gist=f10fdb3c7cfbfa08ab193fb22eb6dbe5)
+[![Lighthouse report](https://img.shields.io/badge/lighthouse_report-F44B21?style=for-the-badge&logo=lighthouse&logoColor=fff)](https://googlechrome.github.io/lighthouse/viewer/?gist=3cd639de190f4e8a6baf0dcd61b7a7a3)
 [![Playwright report](https://raw.githubusercontent.com/johnnygerard/johnnygerard/refs/heads/main/playwright-report-badge.svg)](https://fem-news-homepage.jgerard.workers.dev/playwright-report/)
 
 ## Tech Stack
