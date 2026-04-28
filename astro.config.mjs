@@ -42,7 +42,7 @@ export default defineConfig({
     ],
   },
   integrations: [sitemap()],
-  site: "https://fem-news-homepage.mail-25a.workers.dev",
+  site: "https://fem-news-homepage.jgerard.workers.dev",
   trailingSlash: "never",
   vite: {
     plugins: [
